@@ -1,0 +1,23 @@
+Mécanismes du jeu:
+
+    ☐ Lors du chargement de la page, une grille de démineur déjà initialisée est affichée, avec toutes les cellules “cachées”.
+    ☐ Lors d’un clic simple, la case cliquée se dévoile selon les règles suivantes :
+        ☐ si il y a un drapeau, rien ne se passe, le jeu continue ;
+        ☐ si il y a une bombe, la case est découverte, le jeu est perdu, le chronomètre s’arrête ;
+        ☐ si il y a un nombre, la case est découverte, le jeu continue ;
+        ☐ sinon (c’est qu’il s’agit d’une case vide), toutes les cases vides adjacentes sont découvertes récursivement (chaque case vide doit découvrir les huit cases adjacentes automatiquement, découvrant potentiellement des cases avec des nombres).
+    ☐ Au moment du premier clic, le chronomètre est démarré.
+    ☐ Lors d’un clic secondaire (clic droit), un “drapeau” est posé sur la case, l’empêchant d’être découverte par un clic simple.
+    ☐ Lorsque toutes les cases ne contenant pas une bombe sont découvertes, le chonomètre s’arrête, le jeu est gagné.
+    ☐ À tout moment, le joueur peut décider de recommencer une nouvelle partie en cliquant sur un bouton “Recommencer”.
+
+Restrictions :
+
+    ☐ Aucune librairie vous facilitant le travail sur la manipulation du DOM ne sera autorisée.
+    ☐ Le code “métier” qui implémente les règles du démineur devra être bien séparé du reste du code qui manipule le DOM, afin que ce premier soit testé unitairement (avec console.assert ou une librairie de test de votre choix).
+    
+Bonus :
+    
+    ☐ La génération des bombes peut se faire après la détection du premier clic afin de ne pas faire perdre le joueur dès son premier clic.
+    ☐ Le joueur peut choisir trois niveaux de difficulté qui influent sur la taille de la grille et sur la concentration des bombes.
+    
