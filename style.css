@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #AAA;
+    color: white;
+}
+
+header {
+    text-align:center;
+    margin:24px 0;
+}
+
+header .title {
+    text-transform: uppercase;
+}
+
+header button,
+header select {
+    border: 2px solid #404040;
+    border-top-color: #666;
+    border-bottom-color: #101010;
+    background-color:#202020;
+    color:white;
+    padding: 2px 4px;
+    border-radius:2px;
+    text-transform: uppercase;
+}
+
+.flex_center {
+    display: flex;
+    justify-content: center;
+
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    background-color: #AAA;
+    transition: 300ms;
+}
+
+.grid.game_over::after {
+    background-color: #CC0000;
+    background-image: linear-gradient(120deg, #990000, #FF0000);
+    content: 'LOOSE'
+}
+
+.grid.win::after {
+    content: 'WIN';
+    background-image: linear-gradient(120deg, #999900, #FFFF00);
+    background-color:#CCCC00;
+}
+
+
+.grid.game_over::after,
+.grid.win::after {
+    font-weight: 900;
+    text-align:center;
+    padding:6px 0;
+    margin-top:10px;
+}
+
+
+.grid div {
+    display: flex;
+}
+
+.grid div div {
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    color: black;
+    border-right: 2px solid #EEE;
+    border-bottom: 2px solid #BBB;
+    border-top: 2px solid #EEE;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 300ms;
+    font-size: 10px;
+}
+
+.grid div:first-child div {
+    border-top: 2px solid #EEE;
+}
+
+.grid div div:first-child {
+    border-left: 2px solid #EEE;
+}
+
+.grid div div.hidden {
+    background-color: #CCC;
+}
+
+.grid div div.bomb {
+    background-color: #FF0000 !important;
+}
+
+.grid.win div div.reveal {
+    background-color: #00FF00;
+}
+
+.grid.game_over div div.reveal {
+    background-color: #202020;
+    color:white;
+}
+
+.grid div div.flag {
+    background-color: #0000FF10;
+}
+
+.grid div div.bomb,
+.grid div div.flag {
+    font-size: 10px;
+}
