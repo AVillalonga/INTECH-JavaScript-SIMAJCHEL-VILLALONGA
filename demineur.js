@@ -6,12 +6,13 @@ import { DemineurUI, DemineurUITest } from "./demineurUI.js";
  * Sorry, pas eu le temps de faire les testes car toute notre data est contenu dans la DOM.
  * Pour mettre en place les testes, il aurait suffit d'overrider les méthodes de 'DemineurUITest' et 'CellUITest',
  * en implementant les propriétés du Node dans l'objet Cell.
+ * 
+ * Passe une belle journée/soirée.
  */
 
 
 export class Demineur {
     UI; cellUI; clock; nbBombs;
-
 
     get isWin() {
         return this.cellUI.getVisibleCells().length >= this.cellUI.getAllCells().length - this.nbBombs;
@@ -81,7 +82,7 @@ export class Demineur {
     onLeftClick(e) {
         const node = e.target;
         
-        if (this.clock.startedAt === null) this.start(node);
+        if (!this.clock.isStarted) this.start(node);
 
         if (this.cellUI.isClickable(node)) {
             this.cellUI.display(node);

@@ -15,6 +15,8 @@ export class Clock {
 
     get timeDiffToStr() { return `${this.timeDiff.minutes}:${this.timeDiff.secondes}`; }
 
+    get isStarted() { return this.startedAt !== null; }
+
     start() {
         this.startedAt = new Date(); // Starting At
         this.interval = setInterval(this.display.bind(this), 150); // Run Chrono
