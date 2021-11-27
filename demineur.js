@@ -67,13 +67,13 @@ export class Demineur {
         const fCy = this.cellUI.getCellY(firstCell);
         const difficulty = this.UI.difficultyValue;
         
-        let nbBombs = this.nbBombs = difficulty * Math.floor(difficulty / 7);
+        let nbBombs = this.nbBombs = difficulty * Math.floor(difficulty / 7); // Nombre de bombes dans la partie
         while (nbBombs != 0) {
             const randomNode = this.cellUI.getRandomCell(difficulty);
             const cx = this.cellUI.getCellX(randomNode);
             const cy = this.cellUI.getCellY(randomNode);
             if (!this.cellUI.isBomb(randomNode) && cx !== fCx && cy !== fCy) {
-                this.cellUI.setBomb(randomNode);
+                this.cellUI.setBomb(randomNode); // Add new bomb
                 nbBombs = nbBombs - 1;
             }
         }
