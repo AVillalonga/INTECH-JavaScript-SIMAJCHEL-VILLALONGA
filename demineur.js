@@ -2,6 +2,13 @@ import { Cell, CellUI, CellUITest } from "./cellHelper.js";
 import { Clock } from "./clock.js";
 import { DemineurUI, DemineurUITest } from "./demineurUI.js";
 
+/**
+ * Sorry, pas eu le temps de faire les testes car toute notre data est contenu dans la DOM.
+ * Pour mettre en place les testes, il aurait suffit d'overrider les méthodes de 'DemineurUITest' et 'CellUITest',
+ * en implementant les propriétés du Node dans l'objet Cell.
+ */
+
+
 export class Demineur {
     UI; cellUI; clock; nbBombs;
 
